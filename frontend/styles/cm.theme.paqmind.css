@@ -1,0 +1,75 @@
+*.cm-s-paqmind.CodeMirror {
+  font-family: consolas, source-code-pro, monospace !important;
+  line-height: 1.5rem;
+}
+
+*.cm-s-paqmind .CodeMirror-activeline-background {
+  background-color: #feffdd;
+}
+
+*.cm-s-paqmind .CodeMirror-matchingbracket {
+  outline: 1px solid grey;
+  color: black!important;
+}
+
+*.cm-s-paqmind .cm-comment {
+  font-style: italic;
+  color: #808080;
+}
+
+*.cm-s-paqmind .cm-builtin {
+  color: #000000;
+}
+
+*.cm-s-paqmind .cm-variable {
+  color: #000000;
+}
+
+*.cm-s-paqmind .cm-variable-2 {
+  color: #000000;
+}
+
+*.cm-s-paqmind .cm-variable-3 {
+  color: #000000;
+}
+
+*.cm-s-paqmind .cm-tag {
+  font-weight: bold;
+}
+
+*.cm-s-paqmind .cm-keyword {
+  font-weight: bold;
+  color: #003296;
+}
+
+*.cm-s-paqmind .cm-tag.cm-bracket {
+  font-weight: normal;
+}
+
+*.cm-s-paqmind .cm-tag {
+  color: #003296;
+}
+
+*.cm-s-paqmind .cm-attribute {
+  color: #003296;
+}
+
+*.cm-s-paqmind .cm-number {
+  color: #ff0000;
+}
+
+*.cm-s-paqmind .cm-atom {
+  color: #ff0000;
+}
+
+*.cm-s-paqmind .cm-string {
+  color: #008000;
+}
+
+*.cm-s-paqmind .cm-string-2 {
+  color: #008000;
+}
+
+*.cm-s-paqmind .cm-error {
+  background-color: #ffcccc; /* TODO or underline underwave red?! */
+}

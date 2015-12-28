@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  border: 2px solid;
+  border-radius: @borderRadius/2;
+  padding: 0.5em 0.75em;
+  transition: all 0.2s ease;
+
+  &.black {
+    background: @black;
+    border-color: @black;
+    color: @white;
+  };
+  &.green {
+    background: @green;
+    border-color: @green;
+    color: @white;
+  };
+  &:hover {
+    background: @white;
+    color: @black;
+  }
+
+  &.disabled  {opacity: 0.7;}
+
+  &.xxs { font-size: 0.6rem; border-radius: @borderRadius/4; }
+  &.xs  { font-size: 0.7rem; border-radius: @borderRadius/4;}
+  &.sm  { font-size: 0.8rem; border-radius: @borderRadius/2;}
+  &.md  { font-size: 1rem;   border-radius: @borderRadius/2;}
+  &.lg  { font-size: 1.2rem; border-radius: @borderRadius;}
+  &.xlg { font-size: 1.5rem; border-radius: @borderRadius;}
+}

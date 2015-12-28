@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "html-to-hyperscript",
+  "homepage": "http://html-to-hyperscript.paqmind.com",
+  "author": "Paqmind team (paqmind.com)",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config-prod.js --progress --profile --colors",
+    "dev": "webpack-dev-server --config webpack.config-dev.js --progress --profile --colors --port 2992 --inline"
+  },
+  "engines": {
+    "node": ">=4.2.2"
+  },
+  "dependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel": "5.6.14",
+    "babel-core": "5.6.15",
+    "babel-eslint": "3.1.20",
+    "babel-loader": "5.2.2",
+    "codemirror": "5.10.0",
+    "css-loader": "0.23.1",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "0.8.5",
+    "html-to-hyperscript": "^0.5.1",
+    "json-loader": "0.5.4",
+    "less": "2.5.3",
+    "less-loader": "2.2.2",
+    "lodash.debounce": "3.1.1",
+    "normalize.css": "3.0.3",
+    "ramda": "0.18.0",
+    "style-loader": "0.13.0",
+    "url-loader": "0.5.7",
+    "webpack": "1.12.9",
+    "webpack-dev-server": "1.10.1"
+  }
+}

@@ -1,0 +1,17 @@
+.label {
+    display: inline-block;
+    border-radius: @borderRadius/2;
+    padding: 0.2em 0.5em;
+
+    &.black { background: @black; color: @white; };
+    &.green { background: @green; color: @white; };
+
+    &.disabled  {opacity: 0.7;}
+
+    &.xxs { font-size: 0.6rem; border-radius: @borderRadius/4; }
+    &.xs  { font-size: 0.7rem; border-radius: @borderRadius/4; }
+    &.sm  { font-size: 0.8rem; border-radius: @borderRadius/2; }
+    &.md  { font-size: 1rem;   border-radius: @borderRadius/2; }
+    &.lg  { font-size: 1.2rem; border-radius: @borderRadius; }
+    &.xlg { font-size: 1.5rem; border-radius: @borderRadius; }
+}

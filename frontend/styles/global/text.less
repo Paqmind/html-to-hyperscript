@@ -1,0 +1,39 @@
+.text.black     {color: @black};
+.text.green    {color: @green};
+.text.gray      {color: @gray};
+
+.text.disabled  {color: @disabledColor;}
+
+.text.xxs { font-size: 0.6em; }
+.text.xs  { font-size: 0.7em; }
+.text.sm  { font-size: 0.8em; }
+.text.md  { font-size: 1em;  }
+.text.lg  { font-size: 1.2em; }
+.text.xlg { font-size: 1.5em; }
+
+code {
+  font-family: @codeFontFamily;
+  padding: 0 0.5rem;
+  background-color: @lightGray;
+  border: 1px solid darken(@lightGray, 10%);
+  border-radius: @borderRadius/2;
+  @media (min-width: @screenMdMin) {
+    font-family: @codeFontFamilyExt;
+  }
+}
+
+.mono {
+  font-family: @codeFontFamily;
+}
+
+blockquote {
+  .title();
+  line-height: 1.5;
+  padding-left: 1rem;
+  border-left: 8px solid @black;
+}
+
+
+b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, .highlight {
+    transition: all 0.2s ease;
+}

@@ -1,0 +1,40 @@
+.menu {
+    line-height: 2;
+    .item {
+        &.disabled {
+            a {
+                .disabled();
+                color: @disabledColor;
+            }
+        }
+    }
+
+    &.horizontal {
+        &:after {
+            .clear();
+        }
+        .item {
+            float: left;
+            margin-right: 1em;
+        }
+        &.reversed {
+            .item {
+                float: right;
+                margin-left: 1em;
+            }
+        }
+
+        &.floated.right {
+            .item {
+                margin-right: 0;
+                margin-left: 1em;
+            }
+            &.reversed {
+                .item {
+                    margin-left: 0;
+                    margin-right: 1em;
+                }
+            }
+        }
+    }
+}
