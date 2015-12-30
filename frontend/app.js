@@ -1,3 +1,5 @@
+import "babel/polyfill";
+
 import {join} from "ramda";
 import debounce from "lodash.debounce";
 import codeMirror from "codemirror";
