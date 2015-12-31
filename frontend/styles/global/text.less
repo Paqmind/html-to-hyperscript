@@ -11,19 +11,19 @@
 .text.lg  { font-size: 1.2em; }
 .text.xlg { font-size: 1.5em; }
 
-code {
+.code {
   font-family: @codeFontFamily;
-  padding: 0 0.5rem;
-  background-color: @lightGray;
-  border: 1px solid darken(@lightGray, 10%);
-  border-radius: @borderRadius/2;
   @media (min-width: @screenMdMin) {
     font-family: @codeFontFamilyExt;
   }
 }
 
-.mono {
-  font-family: @codeFontFamily;
+code {
+  .code();
+  padding: 0 0.5rem;
+  background-color: @lightGray;
+  border: 1px solid darken(@lightGray, 10%);
+  border-radius: @borderRadius/2;
 }
 
 blockquote {
@@ -33,7 +33,6 @@ blockquote {
   border-left: 8px solid @black;
 }
 
-
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, .highlight {
-    transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
