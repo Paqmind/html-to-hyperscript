@@ -10,7 +10,7 @@ body {
   font-family: @textFontFamily;
   font-size: @textFontSize;
   line-height: 1.5;
-  min-width: @screenXsMin;
+  min-width: @screenSmMin;
   @media (min-width: @screenMdMin) {
     font-family: @textFontFamilyExt;
   }
@@ -75,23 +75,35 @@ body {
 }
 
 #main {
+  //background: @lightGray;
   display: flex;
   flex: 1;
 }
 
 #left-pane, #right-pane {
+  background: lighten(@lightGray, 3%);
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   width: 50%;
+  footer {
+    background: @white;
+    border-top: 1px solid @lightGray;
+    height: 3rem;
+    padding: 0.5rem 0.3rem;
+    line-height: 1rem;
+  }
   .CodeMirror {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .CodeMirror-scroll {
     flex: 1;
-    margin: 0;
+  }
+  .btn:hover,
+  .btn.active {
+    .btn.green();
   }
 }
