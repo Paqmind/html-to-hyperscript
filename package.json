@@ -5,6 +5,7 @@
   "author": "Paqmind team (paqmind.com)",
   "license": "MIT",
   "scripts": {
+    "postinstall": "bin/install",
     "build": "webpack --config webpack.config-prod.js --progress --profile --colors",
     "dev": "webpack-dev-server --config webpack.config-dev.js --progress --profile --colors --port 2992 --inline"
   },
