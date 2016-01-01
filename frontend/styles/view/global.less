@@ -84,14 +84,30 @@ body {
   flex-direction: column;
   flex-grow: 1;
   width: 50%;
+  footer {
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    line-height: 1rem;
+  }
   .CodeMirror {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
-
   .CodeMirror-scroll {
     flex: 1;
     margin: 0;
   }
+  .btn:hover,
+  .btn.active {
+    .btn.green();
+  }
+}
+
+#left-pane footer {
+  border-right: 1px solid @lightGray;
+  margin-right: 14px; // scroll width in CodeMirror
+}
+#right-pane footer {
+  border-left: 1px solid @lightGray;
 }

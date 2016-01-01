@@ -3,13 +3,6 @@
 <head>
    <meta charset="UTF-8"/>
    <title>HTML to HyperScript</title>
-
-  <style>
-    button.active {
-      background: white;
-      color: black;
-    }
-  </style>
 </head>
 <body>
   <div id="wrapper">
@@ -28,12 +21,16 @@
       <section id="right-pane">
         <textarea name="hs"></textarea>
         <footer>
-          syntax:
-          <button name="syntax" value="h" class="btn code">h</button>
-          <button name="syntax" value="hh" class="btn code active">hh</button>
-          tab size:
-          <button name="tabSize" value="2" class="btn code active">2</button>
-          <button name="tabSize" value="4" class="btn code">4</button>
+          <span class="padding-right">
+            syntax:
+            <button name="syntax" value="h" class="sm black btn code">h</button>
+            <button name="syntax" value="hh" class="sm black btn code active">hh</button>
+          </span>
+          <span class="padding-right">
+            tab size:
+            <button name="tabSize" value="2" class="sm black btn code active">2</button>
+            <button name="tabSize" value="4" class="sm black btn code">4</button>
+          </span>
         </footer>
       </section>
     </main>
