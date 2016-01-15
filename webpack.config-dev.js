@@ -14,6 +14,8 @@ export default {
 
     // http://webpack.github.io/docs/configuration.html#output-filename
     filename: "bundle.js",
+    chunkFilename: "[name].js?",
+
 
     // http://webpack.github.io/docs/configuration.html#output-publicpath
     publicPath: "http://localhost:2992/public/",
@@ -26,7 +28,8 @@ export default {
   debug: true,
 
   // http://webpack.github.io/docs/configuration.html#devtool
-  devtool: "inline-source-map",
+  // Use "inline-source-map" when you need sources
+  devtool: null,
 
   // http://webpack.github.io/docs/configuration.html#module
   module: {

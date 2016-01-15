@@ -16,10 +16,11 @@ export default {
     path: path.resolve(__dirname, "public"),
 
     // http://webpack.github.io/docs/configuration.html#output-filename
-    filename: "bundle.js?[chunkhash]",
+    filename: "[name].js?[chunkhash]",
+    chunkFilename: "[name].js?[chunkhash]",
 
     // http://webpack.github.io/docs/configuration.html#output-publicpath
-    publicPath: "/public/",
+    publicPath: "/",
 
     // http://webpack.github.io/docs/configuration.html#output-pathinfo
     pathinfo: false,
@@ -74,6 +75,6 @@ export default {
 
   // http://webpack.github.io/docs/list-of-plugins.html
   plugins: [
-    new ExtractTextPlugin("[name].css?[contenthash]"),
+    new ExtractTextPlugin("[name].css?[contenthash]", {allChunks: true}),
   ],
 };
