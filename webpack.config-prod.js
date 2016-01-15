@@ -1,8 +1,7 @@
 import path from "path";
 import webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
-
-const AUTOPREFIXER = "autoprefixer?{browsers: ['> 5%']}";
+import Autoprefixer from "autoprefixer";
 
 export default {
   // http://webpack.github.io/docs/configuration.html#entry
@@ -46,23 +45,26 @@ export default {
       {test: /\.(json(\?.*)?)$/,  loaders: ["json"]},
 
       // https://github.com/webpack/css-loader
-      {test: /\.(css(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!${AUTOPREFIXER}`)},
+      {test: /\.(css(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!postcss`)},
 
       // https://github.com/webpack/less-loader
-      {test: /\.(less(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!${AUTOPREFIXER}!less`)},
+      {test: /\.(less(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!postcss!less`)},
 
       // https://github.com/webpack/url-loader
-      {test: /\.(jpg(\?.*)?)$/,   loaders: ["url?limit=100000"]},
-      {test: /\.(jpeg(\?.*)?)$/,  loaders: ["url?limit=100000"]},
-      {test: /\.(png(\?.*)?)$/,   loaders: ["url?limit=100000"]},
-      {test: /\.(gif(\?.*)?)$/,   loaders: ["url?limit=100000"]},
-      {test: /\.(svg(\?.*)?)$/,   loaders: ["url?limit=100000"]},
-      {test: /\.(ttf(\?.*)?)$/,   loaders: ["url?limit=100000"]},
-      {test: /\.(woff(\?.*)?)$/,  loaders: ["url?limit=100000"]},
-      {test: /\.(woff2(\?.*)?)$/, loaders: ["url?limit=100000"]},
-      {test: /\.(eot(\?.*)?)$/,   loaders: ["url?limit=100000"]},
+      {test: /\.(jpg(\?.*)?)$/,   loaders: ["url?limit=10000"]},
+      {test: /\.(jpeg(\?.*)?)$/,  loaders: ["url?limit=10000"]},
+      {test: /\.(png(\?.*)?)$/,   loaders: ["url?limit=10000"]},
+      {test: /\.(gif(\?.*)?)$/,   loaders: ["url?limit=10000"]},
+      {test: /\.(svg(\?.*)?)$/,   loaders: ["url?limit=10000"]},
+      {test: /\.(ttf(\?.*)?)$/,   loaders: ["url?limit=10000"]},
+      {test: /\.(woff(\?.*)?)$/,  loaders: ["url?limit=10000"]},
+      {test: /\.(woff2(\?.*)?)$/, loaders: ["url?limit=10000"]},
+      {test: /\.(eot(\?.*)?)$/,   loaders: ["url?limit=10000"]},
     ],
   },
+
+  // https://github.com/postcss/autoprefixer
+  postcss: [Autoprefixer()],
 
   // http://webpack.github.io/docs/configuration.html#resolve
   resolve: {
@@ -76,5 +78,8 @@ export default {
   // http://webpack.github.io/docs/list-of-plugins.html
   plugins: [
     new ExtractTextPlugin("[name].css?[contenthash]", {allChunks: true}),
+    new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
+    new webpack.optimize.UglifyJsPlugin({mangle: {except: ["$", "window", "document", "console"]}}),
   ],
 };
