@@ -68,11 +68,11 @@ require.ensure([], function(require) {
 
   let initHtml = `
   <div class="menu">
-    <ul>
-      <li>option #1</li>
-      <li>option #2</li>
-    </ul>
-  </div>`;
+  <ul>
+    <li>option #1</li>
+    <li>option #2</li>
+  </ul>
+</div>`;
 
   inputEditor.focus();
   inputEditor.setValue(initHtml.trim());
@@ -92,7 +92,6 @@ require.ensure([], function(require) {
   });
 
   tabSize2Button.addEventListener("click", function (event) {
-    console.log("tabSize2Button click");
     currentTabSize = 2;
     tabSize4Button.classList.remove("active");
     tabSize2Button.classList.add("active");
@@ -100,12 +99,9 @@ require.ensure([], function(require) {
   });
 
   tabSize4Button.addEventListener("click", function (event) {
-    console.log("tabSize4Button click");
     currentTabSize = 4;
     tabSize2Button.classList.remove("active");
     tabSize4Button.classList.add("active");
     updateOutputEditor();
   });
-
-
 }, "html-to-hyperscript-service");
