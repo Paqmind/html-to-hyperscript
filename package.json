@@ -6,16 +6,17 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "bin/install",
-    "dist": "webpack --config webpack.config-prod.js --progress --profile --colors",
-    "dev": "webpack-dev-server --config webpack.config-dev.js --progress --profile --colors --port 2992 --inline"
+    "predist": "ln -sfn ../backend/index.html public/index.html",
+    "dev": "webpack-dev-server --config webpack.config-dev.js --progress --colors --port 2992 --inline",
+    "dist": "NODE_ENV=production webpack --config webpack.config-prod.js --progress --colors"
   },
   "engines": {
     "node": ">=4.2.2"
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
-    "babel": "5.6.14",
-    "babel-core": "5.6.15",
+    "babel": "5.8.20",
+    "babel-core": "5.8.20",
     "babel-eslint": "3.1.20",
     "babel-loader": "5.2.2",
     "codemirror": "5.10.0",

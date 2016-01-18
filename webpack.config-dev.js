@@ -1,5 +1,5 @@
-import path from "path";
-import webpack from "webpack";
+import Path from "path";
+import Webpack from "webpack";
 
 export default {
   // http://webpack.github.io/docs/configuration.html#entry
@@ -10,12 +10,11 @@ export default {
   // http://webpack.github.io/docs/configuration.html#output
   output: {
     // http://webpack.github.io/docs/configuration.html#output-path
-    path: path.resolve(__dirname, "public"),
+    path: Path.resolve(__dirname, "public"),
 
     // http://webpack.github.io/docs/configuration.html#output-filename
     filename: "bundle.js",
     chunkFilename: "[name].js?",
-
 
     // http://webpack.github.io/docs/configuration.html#output-publicpath
     publicPath: "http://localhost:2992/public/",
@@ -31,6 +30,9 @@ export default {
   // Use "inline-source-map" when you need sources
   devtool: null,
 
+  // http://webpack.github.io/docs/configuration.html#profile
+  profile: false,
+
   // http://webpack.github.io/docs/configuration.html#module
   module: {
     // http://webpack.github.io/docs/loaders.html
@@ -39,13 +41,13 @@ export default {
       {test: /\.(js(\?.*)?)$/, loaders: ["babel?stage=0"], exclude: /node_modules/},
 
       // https://github.com/webpack/json-loader
-      {test: /\.(json(\?.*)?)$/,  loaders: ["json"]},
+      {test: /\.(json(\?.*)?)$/, loaders: ["json"]},
 
       // https://github.com/webpack/css-loader
-      {test: /\.(css(\?.*)?)$/, loaders: ["style", "css?sourceMap"]},
+      {test: /\.(css(\?.*)?)$/, loaders: ["style", "css"]},
 
       // https://github.com/webpack/less-loader
-      {test: /\.(less(\?.*)?)$/, loaders: ["style", "css?sourceMap", "less?sourceMap"]},
+      {test: /\.(less(\?.*)?)$/, loaders: ["style", "css", "less"]},
 
       // https://github.com/webpack/url-loader
       {test: /\.(jpg(\?.*)?)$/,   loaders: ["url?limit=100000"]},
@@ -63,7 +65,7 @@ export default {
   // http://webpack.github.io/docs/configuration.html#resolve
   resolve: {
     // http://webpack.github.io/docs/configuration.html#resolve-root
-    root: path.resolve("./frontend"),
+    root: Path.resolve("./frontend"),
 
     // http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories
     modulesDirectories: ["node_modules"],

@@ -1,5 +1,5 @@
-import path from "path";
-import webpack from "webpack";
+import Path from "path";
+import Webpack from "webpack";
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import Autoprefixer from "autoprefixer";
 
@@ -12,7 +12,7 @@ export default {
   // http://webpack.github.io/docs/configuration.html#output
   output: {
     // http://webpack.github.io/docs/configuration.html#output-path
-    path: path.resolve(__dirname, "public"),
+    path: Path.resolve(__dirname, "public"),
 
     // http://webpack.github.io/docs/configuration.html#output-filename
     filename: "[name].js?[chunkhash]",
@@ -42,13 +42,13 @@ export default {
       {test: /\.(js(\?.*)?)$/, loaders: ["babel?stage=0"], exclude: /node_modules/},
 
       // https://github.com/webpack/json-loader
-      {test: /\.(json(\?.*)?)$/,  loaders: ["json"]},
+      {test: /\.(json(\?.*)?)$/, loaders: ["json"]},
 
       // https://github.com/webpack/css-loader
-      {test: /\.(css(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!postcss`)},
+      {test: /\.(css(\?.*)?)$/, loader: ExtractTextPlugin.extract("css!postcss")},
 
       // https://github.com/webpack/less-loader
-      {test: /\.(less(\?.*)?)$/, loader: ExtractTextPlugin.extract(`css!postcss!less`)},
+      {test: /\.(less(\?.*)?)$/, loader: ExtractTextPlugin.extract("css!postcss!less")},
 
       // https://github.com/webpack/url-loader
       {test: /\.(jpg(\?.*)?)$/,   loaders: ["url?limit=10000"]},
@@ -69,7 +69,7 @@ export default {
   // http://webpack.github.io/docs/configuration.html#resolve
   resolve: {
     // http://webpack.github.io/docs/configuration.html#resolve-root
-    root: path.resolve("./frontend"),
+    root: Path.resolve("./frontend"),
 
     // http://webpack.github.io/docs/configuration.html#resolve-modulesdirectories
     modulesDirectories: ["node_modules"],
@@ -78,8 +78,8 @@ export default {
   // http://webpack.github.io/docs/list-of-plugins.html
   plugins: [
     new ExtractTextPlugin("[name].css?[contenthash]", {allChunks: true}),
-    new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
-    new webpack.optimize.UglifyJsPlugin({mangle: {except: ["$", "window", "document", "console"]}}),
+    new Webpack.optimize.DedupePlugin(),
+		new Webpack.optimize.UglifyJsPlugin({compress: {warnings: false}}),
+    new Webpack.optimize.UglifyJsPlugin({mangle: {except: ["$", "window", "document", "console"]}}),
   ],
 };
