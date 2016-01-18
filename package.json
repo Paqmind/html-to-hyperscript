@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "bin/install",
+    "dev": "webpack-dev-server --config webpack.config-dev.js --progress --colors --port 2992 --inline"
     "predist": "ln -sfn ../backend/index.html public/index.html",
-    "dev": "webpack-dev-server --config webpack.config-dev.js --progress --colors --port 2992 --inline",
-    "dist": "NODE_ENV=production webpack --config webpack.config-prod.js --progress --colors"
+    "dist": "NODE_ENV=production webpack --config webpack.config-prod.js --progress --colors",
   },
   "engines": {
     "node": ">=4.2.2"
